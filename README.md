@@ -1,0 +1,5 @@
+# Mean Template
+
+:tada:
+
+Enjoy… 

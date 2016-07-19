@@ -18,6 +18,11 @@
         url: "/about",
         templateUrl: "/templates/about.html"
       })
+      .state("adminPage", {
+        url: "/template/admin.html"
+        controller: "adminController",
+        controllerAs: "vm"
+      })
 
 
 

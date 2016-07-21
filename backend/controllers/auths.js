@@ -11,7 +11,7 @@ var adminAuth = function (req, res, next) {
   // find the user
   User.findOne({
       email: req.body.email
-    }).select('email password').exec(function(err, user) {
+    }).exec(function(err, user) {
 
       if (err) throw err;
 
@@ -21,8 +21,7 @@ var adminAuth = function (req, res, next) {
           success: false,
           message: 'Authentication failed. User not found.'
         });
-      } else if (user) {
-
+      } else {
         // check if password matches
         var validPassword = user.comparePassword(req.body.password);
         if (!validPassword) {
@@ -34,10 +33,10 @@ var adminAuth = function (req, res, next) {
 
           // if user is found and password is right
           // create a token
+          delete user.password;
+
           var token = jwt.sign({
-            email: user.email,
-            name:        user.name,
-            _id:         user._id
+            user: user
           }, superSecret, {
             expiresIn: "7d" // expires in 30 days
           });

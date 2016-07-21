@@ -4,8 +4,11 @@ var mongoose = require('mongoose'),
 
 // Create a schema of your model
 var productSchema = new mongoose.Schema({
-  name:       String,
-  category:   String,
+  image:       String,
+  name:        String,
+  size:        String,
+  color:       String,
+  description: String,
   user:       { type: mongoose.Schema.Types.ObjectId, ref:'User' }
 });
 

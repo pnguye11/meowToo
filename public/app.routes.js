@@ -2,31 +2,40 @@
   "use strict";
 
   angular
-    .module("SkunkLapsApp")
+    .module("meowTooApp")
     .config(AppRoutes);
 
   AppRoutes.$inject = ["$stateProvider", "$urlRouterProvider"];
 
   function AppRoutes($stateProvider, $urlRouterProvider) {
-    stateProvider
+    $stateProvider
       .state("homePage", {
-        url: "/template/home.html"
-        controller: "homeController",
+        url: '/home',
+        templateUrl: "/templates/home.html",
+        controller: "MainController",
         controllerAs: "vm"
       })
       .state("aboutPage", {
-        url: "/about",
+        url: '/about',
+        templateUrl: "/about",
         templateUrl: "/templates/about.html"
       })
-      .state("adminPage", {
-        url: "/template/admin.html"
-        controller: "adminController",
+      .state("admin", {
+        url: '/admin',
+        templateUrl: "/templates/admin.html",
+        controller: "AdminController",
+        controllerAs: "vm"
+      })
+      .state("login", {
+        url: '/login',
+        templateUrl: "/templates/login.html",
+        controller: "LoginController",
         controllerAs: "vm"
       })
 
 
 
-    $urlRouterProvider.otherwise("/");
+    $urlRouterProvider.otherwise("/home");
   }
 
 })();

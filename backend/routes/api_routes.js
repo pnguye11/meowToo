@@ -12,13 +12,12 @@ router.post('/admins',                              AdminCtlr.userCreate);
 router.get('/users/:id',                            AdminCtlr.userShow);
 
 
-//||||||||||||||||||||||||||--
-// Products CRUD SERVICES
-//||||||||||||||||||||||||||--
-// router.get('/products/:id',    AuthsCtrl.tokenVerify, ProductsCtrl.productsShow);
-// router.get('/products',        AuthsCtrl.tokenVerify, ProductsCtrl.productsIndex);
-// router.post('/products',       AuthsCtrl.tokenVerify, ProductsCtrl.productsCreate);
-// router.put('/products/:id',    AuthsCtrl.tokenVerify, ProductsCtrl.productsUpdate);
-// router.delete('/products/:id', AuthsCtrl.tokenVerify, ProductsCtrl.productsDelete);
+
+router.get('/products/:id',    AuthsCtrl.tokenVerify, ProductsCtlr.productShow);
+router.get('/products',        AuthsCtrl.tokenVerify, ProductsCtlr.productIndex);
+router.post('/products',       AuthsCtrl.tokenVerify, ProductsCtlr.productCreate);
+router.put('/products/:id',    AuthsCtrl.tokenVerify, ProductsCtlr.productUpdate);
+router.delete('/products/:id', AuthsCtrl.tokenVerify, ProductsCtlr.productDelete);
+
 
 module.exports = router;

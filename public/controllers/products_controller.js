@@ -3,11 +3,11 @@
 
   angular
     .module("meowTooApp")
-    .controller("SellingControllers", SellingController);
+    .controller("ProductControllers", ProductController);
 
-  SellingController.$inject = ["$state", "adminDataService", "$http"];
+  ProductController.$inject = ["$state", "adminDataService", "$http"];
 
-  function SellingController($state, adminDataService, $http) {
+  function ProductController($state, adminDataService, $http) {
     var vm = this;
 
     vm.admin = adminDataService.admin;
@@ -16,17 +16,17 @@
 
     vm.newProduct = {
       image: "",
-      name: "",
-      size: "",
-      color: "" ,
+      title: "",
+      stock: Number,
+      price: Number,
       description: ""
     };
 
     vm.editProduct = {
       image: "",
-      name: "",
-      size: "",
-      color: "" ,
+      title: "",
+      stock: Number,
+      price: Number,
       description: ""
     }
 
@@ -60,9 +60,9 @@
         .then(function(response) {
           vm.newProduct = {
             image: "",
-            name: "",
-            size: "",
-            color: "" ,
+            title: "",
+            stock: Number,
+            price: Number,
             description: ""
           };
         });
@@ -72,9 +72,9 @@
       $http.put('/api/products/' + id, vm.editProduct).then(function(response) {
         vm.editProduct = {
           image: "",
-          name: "",
-          size: "",
-          color: "" ,
+          title: "",
+          stock: Number,
+          price: Number,
           description: ""
         };
       }, function(errRes) {
@@ -84,16 +84,16 @@
 
     function resetEditForm() {
       vm.productImage       = '';
-      vm.productSize        = '';
-      vm.productColor       = '';
+      vm.productPrice       = Number;
+      vm.productStock       = Number;
       vm.productDescription = '';
       vm.product = '';
-      vm.productName = '';
+      vm.productTitle = '';
       vm.editProduct = {
         image: "",
-        name: "",
-        size: "",
-        color: "" ,
+        title: "",
+        stock: Number,
+        price: Number,
         description: ""
       };
     }

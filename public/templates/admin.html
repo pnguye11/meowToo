@@ -1,3 +1,5 @@
 <h1>admin</h1>
+<body ng-controller="MainController as vm">
 
-<a href=""></a>
+<a class="btn" ng-click="vm.logout()">Logout {{ vm.adminService.admin.email }}</a>
+</body>

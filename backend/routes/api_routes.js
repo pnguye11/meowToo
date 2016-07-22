@@ -1,7 +1,6 @@
 var express = require('express'),
     router  = express.Router();
 
-
 var ProductsCtlr = require('../controllers/productCtlr'),
     AdminCtlr    = require('../controllers/adminCtlr'),
     AuthsCtrl    = require('../controllers/auths');

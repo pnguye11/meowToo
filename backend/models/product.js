@@ -4,12 +4,11 @@ var mongoose = require('mongoose'),
 
 // Create a schema of your model
 var productSchema = new mongoose.Schema({
-  image:       String,
-  name:        String,
-  size:        String,
-  color:       String,
+  title: { type: String, required: true, trim: true },
+  price: { type: Number, required: true, min: 0 },
+  stock: { type: Number, default: 1 },
   description: String,
-  user:       { type: mongoose.Schema.Types.ObjectId, ref:'User' }
+  image: String
 });
 
 // Create the model using your schema.

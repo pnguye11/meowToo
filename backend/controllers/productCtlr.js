@@ -38,7 +38,7 @@ var productCreate = function(req, res) {
   var product       = new product();   // create a new instance of the product model
 
   product.name      = req.body.name;
-  product.category  = req.body.category;
+  // product.category  = req.body.category;
 
   product.save(function(err, savedProduct) {
     if (err) {
@@ -66,7 +66,7 @@ var productUpdate = function(req, res) {
 
     // set the new product information if it exists in the request
     if (req.body.name) product.name = req.body.name;
-    if (req.body.category) product.category = req.body.category;
+    // if (req.body.category) product.category = req.body.category;
 
     // save the product
     product.save(function(err, updatedFish) {

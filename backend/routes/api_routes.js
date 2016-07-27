@@ -13,7 +13,7 @@ router.get('/users/:id',                            AdminCtlr.userShow);
 
 
 router.get('/products/:id',    AuthsCtrl.tokenVerify, ProductsCtlr.productShow);
-router.get('/products',        AuthsCtrl.tokenVerify, ProductsCtlr.productIndex);
+router.get('/products',         ProductsCtlr.productIndex);
 router.post('/products',       AuthsCtrl.tokenVerify, ProductsCtlr.productCreate);
 router.put('/products/:id',    AuthsCtrl.tokenVerify, ProductsCtlr.productUpdate);
 router.delete('/products/:id', AuthsCtrl.tokenVerify, ProductsCtlr.productDelete);

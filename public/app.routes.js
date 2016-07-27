@@ -10,9 +10,9 @@
   function AppRoutes($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state("homePage", {
-        url: '/home',
+        url: '/',
         templateUrl: "/templates/home.html",
-        controller: "MainController",
+        controller: "LoginController",
         controllerAs: "vm"
       })
       .state("aboutPage", {
@@ -32,6 +32,12 @@
         controller: "LoginController",
         controllerAs: "vm"
       })
+      .state("product", {
+        url: "/products",
+        templateUrl: "/templates/products.html",
+        controller: "ProductController",
+        controllerAs: "vm"
+      });
 
 
 

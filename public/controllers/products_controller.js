@@ -3,7 +3,7 @@
 
   angular
     .module("meowTooApp")
-    .controller("ProductControllers", ProductController);
+    .controller("ProductController", ProductController);
 
   ProductController.$inject = ["$state", "adminDataService", "$http"];
 
@@ -32,7 +32,7 @@
 
     vm.getProducts   = getProducts;
     vm.deleteProduct = deleteProduct;
-    vm.updateProuct  = updateProuct;
+    vm.updateProduct  = updateProduct;
     vm.postProduct   = postProduct;
     vm.resetEditForm = resetEditForm;
 
@@ -46,7 +46,7 @@
       });
     }
 
-    function deleteproduct(id) {
+    function deleteProduct(id) {
       $http.delete('/api/products/' + id).then(function(response) {
         console.log(response);
       }, function(errRes) {

@@ -35,17 +35,18 @@
         </p>
     </div>
     </header>
-<!-- <div class="container">
+<div class="container">
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">
                 Featured Products:
             </h1>
-            <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-model="product in vm.products_controller">
+              <p>{{hellow}}</p>
+            <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="products in vm.product">
                  <div class="thumbnail">
-                <img src="{{products.image}}" alt="{{product.title}}">
+                  <img ng-src="{{product.image}}" alt="{{product.title}}">
                 <div class="caption">
-                    <h3>{{Products.title}}</h3>
+                    <h3>{{Product.title}}</h3>
                     <p>
                         {{product.description | limitTo: 100}} ...
                     </p>
@@ -75,7 +76,7 @@
     </div>
 </div>
 
- -->
+
 
 
       <hr class="featurette-divider">

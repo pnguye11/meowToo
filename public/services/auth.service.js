@@ -42,7 +42,7 @@
       authToken.setToken();
 
       // return to homepage
-      $state.go('homePage');
+      $state.go('product');
     };
 
     // check if a user is logged in

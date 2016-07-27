@@ -10,14 +10,18 @@
     function LoginController($state, authService, adminDataService) {
       var vm = this;
 
-      vm.login = function() {
+      vm.login = login;
+      vm.isLoggedIn = authService.isLoggedIn;
+      vm.currentUser = adminDataService.user;
+
+      function login() {
         authService.login(vm.email, vm.password)
           .then(function() {
-            $state.go("admin");
+            $state.go('product_form');
           });
-      }
+      };
 
 
-    };
+    }
 
 })();

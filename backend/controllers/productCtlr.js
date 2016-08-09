@@ -37,7 +37,11 @@ var productIndex = function(req, res) {
 var productCreate = function(req, res) {
   var product       = new product();   // create a new instance of the product model
 
-  product.name      = req.body.name;
+  product.title      = req.body.title;
+  product.price      = req.body.price;
+  product.stock      = req.body.stock;
+  product.image      = req.body.image;
+  product.description      = req.body.description;
   // product.category  = req.body.category;
 
   product.save(function(err, savedProduct) {
@@ -65,7 +69,11 @@ var productUpdate = function(req, res) {
     }
 
     // set the new product information if it exists in the request
-    if (req.body.name) product.name = req.body.name;
+    if (req.body.title) product.title = req.body.title;
+    if (req.body.price) product.price = req.body.price;
+    if (req.body.stock) product.stock = req.body.stock;
+    if (req.body.image) product.image = req.body.image;
+    if (req.body.description) product.description = req.body.description;
     // if (req.body.category) product.category = req.body.category;
 
     // save the product

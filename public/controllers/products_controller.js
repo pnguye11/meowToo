@@ -12,7 +12,8 @@
 
     vm.admin = adminDataService.admin;
 
-    vm.products = [];
+
+    vm.products = {};
 
     vm.newProduct = {
       image: "",
@@ -38,9 +39,34 @@
 
     vm.getProducts();
 
+    // function getProducts() {
+    //   productDataService.all().then(function(response) {
+    //     vm.products = response.data;
+    //     // vm.uniqueMans = getUnique(vm.items, 'manufacturer');
+    //     // vm.uniqueColors = getUnique(vm.items, 'color').filter(function(color) {
+    //     //   return color !== 'undefined';
+    //     // });
+    //     // vm.uniqueType = getUnique(vm.items, 'type');
+    //     // vm.uniquePhoneModels = getUnique(vm.items, "phoneModel");
+    //     // vm.uniquePrices = getUnique(vm.items, "price");
+    //       return products
+    //     // vm.uniqueColor = getUnique(vm.items,"color");
+    //     console.log(response.data);
+    //   }, function(errRes) {
+    //     console.error('Error retrieving item!', errRes);
+    //   });
+    // }
+
+
       function getProducts() {
       $http.get('/api/products').then(function(response) {
-        vm.products = response.data;
+        vm.products = {
+          image: "",
+          title: "",
+          stock: Number,
+          price: Number,
+          description: ""
+        }
       }, function(errRes) {
         console.error('Error posting item!', errRes);
       });

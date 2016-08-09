@@ -1,7 +1,7 @@
 var mongoose = require('./database');
-
-var User = require('../models/user');
-var Product = require('../models/product')
+var User     = require('../models/user');
+var Product  = require('../models/product');
+var Category = require('../models/category');
 
 var users = [
   { // 0
@@ -26,31 +26,7 @@ var users = [
 //   });
 // });
 
-
-var products = [
-  { // 0
-    title: 'You Can Do it',
-      imageUrl: 'assets/img/youcan.jpg',
-      price: 25,
-      stock: 250,
-      description: 'You Can Do it!'
-    }, {
-      title: 'Mug',
-      imageUrl: 'assets/img/mug.png',
-      price: 15,
-      stock: 100,
-      description: 'Drink Me!'
-    }, {
-      title: 'coffee mug',
-      imageUrl: 'assets/img/cuphoodie.jpg',
-      price: 8,
-      stock: 50,
-      description: "You're Purrrrfect!"
-    }
-
-];
-
-
+var categories = [ "Shoes", "Apparels", "Misc"];
 
 Product.remove({}, function(err) {
   if (err) console.log(err);
@@ -62,24 +38,27 @@ Product.remove({}, function(err) {
     User.create(users, function(err, users) {
 
       var products = [
-        { // 0
-          title: 'You Can Do it',
-            image: 'assets/img/youcan.jpg',
+        {
+            title: 'You Can Do it',
+            imageUrl: 'assets/img/youcan.jpg',
             price: 25,
             stock: 250,
-            description: 'You Can Do it!'
+            description: 'You Can Do it!',
+            category: categories[1],
           }, {
             title: 'Mug',
-            image: 'assets/img/mug.png',
+            imageUrl: 'assets/img/mug.png',
             price: 15,
             stock: 100,
-            description: 'Drink Me!'
+            description: 'Drink Me!',
+            category: categories[3]
           }, {
             title: 'coffee mug',
-            image: 'assets/img/cuphoodie.jpg',
+            imageUrl: 'assets/img/cuphoodie.jpg',
             price: 8,
             stock: 50,
-            description: "You're Purrrrfect!"
+            description: "You're Purrrrfect!",
+            category: categories[2]
           }
 
         ];

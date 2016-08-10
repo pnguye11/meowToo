@@ -1,6 +1,20 @@
-<div ng-include src="headerSrc"></div>
-<section class="product-view" role="product-view">
-    <div class="content-wrapper">
+<section class="secondary-nav" role="sub-nav">
+  <div class="content-wrapper" class="col-xs-12 col-sm-3">
+    <ul class="product-nav">
+      <li ng-class="{'focus': category==''}" ng-click="getCategory('')"><a>All</a></li>
+      <li ng-class="{'focus': category=='shoes'}" ng-click="getCategory('shoes')"><a>Shoes</a></li>
+      <li ng-class="{'focus': category=='shirts'}" ng-click="getCategory('Apparels')"><a>Apparels</a></li>
+      <li ng-class="{'focus': category=='pants'}" ng-click="getCategory('Misc')"
+      ><a>Misc</a></li>
+      <li ng-class="{'focus': category=='outerwear'}" ng-click="getCategory('outerwear')"
+      ><a>Outerwear</a></li>
+      <li ng-class="{'focus': category=='accessories'}" ng-click="getCategory('accessories')"
+      ><a>Accessories</a></li>
+    </ul>
+  </div>
+</section>
+<section class="product-view" role="product-view" >
+    <div class="content-wrapper" >
         <div class="row">
             <!--: SHOW PRODUCTS -->
             <div class="col-xs-12 col-sm-3"
@@ -14,12 +28,17 @@
                         </div>
                     </div>
                     <!-- SET PRODUCT IMAGE -->
+                    <div>
+
                     <div class="product-img" style="background:url('{{product.image}}');background-size:cover;background-position:center center">
                     </div>
                     <div class="product-info">
                         <div class="product-name">
-                            <!-- SET PRODUCT NAME -->
                             {{product.name}}
+                        </div>
+                        <div class="product-brand">
+                            <!-- SET PRODUCT Description -->
+                            <em>{{product.title}}</em>
                         </div>
                         <div class="product-brand">
                             <!-- SET PRODUCT Description -->
@@ -28,8 +47,15 @@
                         <div class="product-cost">
                             <!-- SET PRODUCT PRICE WITH FILTER -->
                             {{product.price | currency:'$':0}}
+                              <br>
+                              <ul ng-show="vm.isLoggedIn()">
+                                  <button class="btn btn-danger btn-xs" ng-click="vm.deleteProduct(product._id)">X</button>
+                                  <button class="btn btn-warning btn-xs" ng-click="">Edit</button>
+                              </ul>
 
                         </div>
+                    </div>
+
                     </div>
                 </div>
             </div>

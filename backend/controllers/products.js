@@ -38,6 +38,7 @@ var productIndex = function(req, res, next) {
 var productCreate = function(req, res) {
   var product       = new Product();   // create a new instance of the product model
 
+console.log("hi")
   product.title      = req.body.title;
   product.price      = req.body.price;
   product.stock      = req.body.stock;

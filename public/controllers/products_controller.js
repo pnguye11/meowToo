@@ -5,11 +5,13 @@
     .module("meowTooApp")
     .controller("ProductsController", ProductsController);
 
-  ProductsController.$inject = ["$state", "userDataService", "$log", "$http"];
+  ProductsController.$inject = ["$state", "userDataService", "$log", "$http", "authService"];
 
-  function ProductsController($state, userDataService, $log, $http) {
+  function ProductsController($state, userDataService, $log, $http, authService) {
     var vm = this;
     vm.user = userDataService.user;
+    vm.isLoggedIn = authService.isLoggedIn;
+    vm.currentUser = userDataService.user;
     vm.products = [];
 
 
@@ -72,7 +74,8 @@
             title: "",
             stock: Number,
             price: Number,
-            description: ""
+            description: "",
+            category: ""
           };
         });
     }
@@ -105,6 +108,28 @@
         description: ""
       };
     }
+
+vm.getCategory = function(cat){
+    var p = allprod;
+    var prodcat = []
+
+    for (var i=0; i< p.length; i++){
+      for (var j=0; j< p[i].categories.length; j++){
+        if (p[i].categories[j] == cat){
+          //console.log(cat);
+          prodcat.push(p[i]);
+
+        }
+        else if(cat == ''){
+          prodcat = allprod;
+        }
+      }
+    }
+
+
+      vm.products = prodcat;
+  }
+
 
   }
 

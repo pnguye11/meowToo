@@ -3,7 +3,7 @@
     <label for="title">Title</label>
     <input
         type="text"
-        ng-model="vm.product.title"
+        ng-model="vm.newProduct.title"
         class="form-control"
         id="title"
         placeholder="product title"
@@ -13,7 +13,7 @@
     <label for="year">Description</label>
     <input
         type="text"
-        ng-model="vm.product.description"
+        ng-model="vm.newProduct.description"
         class="form-control"
         id="description"
         placeholder="product description"
@@ -25,10 +25,46 @@
         type="number"
         step="any"
         min="0"
-        ng-model="vm.product.price"
+        ng-model="vm.newProduct.price.Number"
         class="form-control"
         id="price"
         placeholder="0.00"
+    />
+</div>
+<div class="form-group">
+    <label for="year">stock</label>
+    <input
+        type="Number"
+        step="any"
+        min="0"
+        ng-model="vm.newProduct.stock.number"
+        class="form-control"
+        id="price"
+        placeholder="0.00"
+    />
+</div>
+<div class="form-group">
+    <label for="year">Image</label>
+    <input
+        type="string"
+        step="any"
+        min="0"
+        ng-model="vm.newProduct.image"
+        class="form-control"
+        id="image"
+        placeholder="link"
+    />
+</div>
+<div class="form-group">
+    <label for="year">Category</label>
+    <input
+        type="string"
+        step="any"
+        min="0"
+        ng-model="vm.newProduct.category"
+        class="form-control"
+        id="image"
+        placeholder="text"
     />
 </div>
 <div class="form-group">

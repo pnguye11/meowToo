@@ -36,7 +36,7 @@ var productIndex = function(req, res, next) {
 // CREATE product
 //||||||||||||||||||||||||||--
 var productCreate = function(req, res) {
-  var product       = new product();   // create a new instance of the product model
+  var product       = new Product();   // create a new instance of the product model
 
   product.title      = req.body.title;
   product.price      = req.body.price;
@@ -44,7 +44,6 @@ var productCreate = function(req, res) {
   product.image      = req.body.image;
   product.description      = req.body.description;
   product.category  = req.body.category;
-
   product.save(function(err, savedProduct) {
     if (err) {
       res.send(err)
@@ -78,7 +77,7 @@ var productUpdate = function(req, res) {
     // if (req.body.category) product.category = req.body.category;
 
     // save the product
-    product.save(function(err, updatedFish) {
+    product.save(function(err, updatedProduct) {
       if (err) {
         res.send(err);
       }

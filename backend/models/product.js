@@ -7,7 +7,7 @@ var mongoose = require('mongoose'),
 // Create a schema of your model
 var productSchema = new mongoose.Schema({
   category : {
-              type: String, required: true,
+              type: String,
               enum: ["Shoes", "Apparels", "Misc"]
   },
   title: { type: String, required: true, trim: true },

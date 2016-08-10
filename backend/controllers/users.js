@@ -60,7 +60,7 @@ var userAuth = function (req, res, next) {
 //||||||||||||||||||||||||||--
 var tokenVerify = function(req, res, next) {
   // do logging
-  console.log('Somebody just accessed the CaseGalaxy API!');
+  console.log('Admin just accessed the meowToo API!');
 
   // check header or url parameters or post parameters for token
   var token = req.body.token || req.query.token || req.headers['x-access-token'];

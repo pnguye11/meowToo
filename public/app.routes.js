@@ -20,12 +20,12 @@
         templateUrl: "/about",
         templateUrl: "/templates/about.html"
       })
-      // .state("adminPage", {
-      //   url: '/admin',
-      //   templateUrl: "/templates/admin.html",
-      //   controller: "AdminController",
-      //   controllerAs: "vm"
-      // })
+      .state("admin", {
+        url: '/admin',
+        templateUrl: "/templates/admin.html",
+        controller: "ProductsController",
+        controllerAs: "vm"
+      })
       .state("loginPage", {
         url: '/login',
         templateUrl: "/templates/login.html",

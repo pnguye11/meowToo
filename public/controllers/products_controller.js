@@ -5,13 +5,13 @@
     .module("meowTooApp")
     .controller("ProductsController", ProductsController);
 
-  ProductsController.$inject = ["$state",  "$log", "$http"];
+  ProductsController.$inject = ["$state", "userDataService", "$log", "$http"];
 
-  function ProductsController($state,  $log, $http) {
+  function ProductsController($state, userDataService, $log, $http) {
     var vm = this;
+    vm.user = userDataService.user;
     vm.products = [];
 
-    // vm.current = .product;
 
 
 
@@ -63,6 +63,7 @@
     }
 
     function postProduct() {
+      console.log("hi");
       $http.post('/api/products', vm.newProduct)
         .then(getProducts)
         .then(function(response) {

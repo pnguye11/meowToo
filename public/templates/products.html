@@ -1,26 +1,37 @@
-      <div class="col-md-10" id="products-right-container">
-        <ul class="products-container">
-          <li class="product product-boxes" ng-repeat="product in vm.products" >
-            <ul id="products">
-              <div>
-                <li class="product product-photos-li ">
-                  <a><img id="product-list-photos" ng-src="{{product.image}}"></a>
-                </li>
-                <li class="product product-model">
-                  <strong>{{product.title}}</strong>
-                </li>
-                <li class="product product-price">
-                  <em>{{product.description}}</em>
-                </li>
-                <li class="product product-manufacturer">
-                  {{product.price}}
-                </li>
-                <li class="product buttons-li">
-                  <button class="btn btn-danger btn-xs" ng-click="vm.deleteProduct(product._id)">X</button>
-                  <button class="btn btn-warning btn-xs" ng-click="">Edit</button>
-                </li>
-              </div>
-            </ul>
-          </li>
-        </ul>
-      </div>
+<section class="product-view" role="product-view">
+    <div class="content-wrapper">
+        <div class="row">
+            <!--: SHOW PRODUCTS -->
+            <div class="col-xs-12 col-sm-3"
+                ng-repeat="product in vm.products">
+                <div id="product-card" class="product-card">
+                    <div class="product-buy">
+                        <div class="table-view">
+                            <div class="table-cell">
+                                <i class="fa fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- SET PRODUCT IMAGE -->
+                    <div class="product-img" style="background:url('{{product.image}}');background-size:cover;background-position:center center">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-name">
+                            <!-- SET PRODUCT NAME -->
+                            {{product.name}}
+                        </div>
+                        <div class="product-brand">
+                            <!-- SET PRODUCT Description -->
+                            <em>{{product.description}}</em>
+                        </div>
+                        <div class="product-cost">
+                            <!-- SET PRODUCT PRICE WITH FILTER -->
+                            {{product.price | currency:'$':0}}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<section>

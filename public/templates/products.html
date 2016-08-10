@@ -7,13 +7,13 @@
                   <a><img id="product-list-photos" ng-src="{{product.image}}"></a>
                 </li>
                 <li class="product product-model">
-                  <strong>{{product.phoneModel}}</strong>
+                  <strong>{{product.title}}</strong>
                 </li>
                 <li class="product product-price">
-                  <em>{{product.price}}</em>
+                  <em>{{product.description}}</em>
                 </li>
                 <li class="product product-manufacturer">
-                  {{product.manufacturer}}
+                  {{product.price}}
                 </li>
                 <li class="product buttons-li">
                   <button class="btn btn-danger btn-xs" ng-click="vm.deleteProduct(product._id)">X</button>

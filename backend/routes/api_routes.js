@@ -13,7 +13,7 @@ router.get('/users/:id',                            UsersController.userShow);
 
 
 router.get('/products/:id',    UsersController.tokenVerify, ProductsController.productShow);
-router.get('/products',        UsersController.tokenVerify, ProductsController.productIndex);
+router.get('/products',                                     ProductsController.productIndex);
 router.post('/products',       UsersController.tokenVerify, ProductsController.productCreate);
 router.put('/products/:id',    UsersController.tokenVerify, ProductsController.productUpdate);
 router.delete('/products/:id', UsersController.tokenVerify, ProductsController.productDelete);

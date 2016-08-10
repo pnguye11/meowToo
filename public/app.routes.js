@@ -10,9 +10,9 @@
   function AppRoutes($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state("homePage", {
-        url: '/',
+        url: '/home',
         templateUrl: "/templates/home.html",
-        controller: "LoginController",
+        controller: "MainController",
         controllerAs: "vm"
       })
       .state("aboutPage", {
@@ -20,22 +20,22 @@
         templateUrl: "/about",
         templateUrl: "/templates/about.html"
       })
-      .state("admin", {
-        url: '/admin',
-        templateUrl: "/templates/admin.html",
-        controller: "AdminController",
-        controllerAs: "vm"
-      })
-      .state("login", {
+      // .state("adminPage", {
+      //   url: '/admin',
+      //   templateUrl: "/templates/admin.html",
+      //   controller: "AdminController",
+      //   controllerAs: "vm"
+      // })
+      .state("loginPage", {
         url: '/login',
         templateUrl: "/templates/login.html",
         controller: "LoginController",
         controllerAs: "vm"
       })
-      .state("product", {
+      .state("productsPage", {
         url: "/products",
         templateUrl: "/templates/products.html",
-        controller: "ProductController",
+        controller: "ProductsController",
         controllerAs: "vm"
       });
 

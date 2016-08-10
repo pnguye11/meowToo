@@ -5,7 +5,7 @@
          .factory('authService',     authService)
          .factory('authInterceptor', authInterceptor);
 
-  authService.$inject     = ["$http", "$q", "authToken", "adminDataService", "$state", "$window"];
+  authService.$inject     = ["$http", "$q", "authToken", "userDataService", "$state", "$window"];
   authToken.$inject       = ["$window"];
   authInterceptor.$inject = ["$q", "$location", "authToken"];
 
@@ -13,7 +13,7 @@
   //||||||||||||||||||||||||||--
   // AUTH SERVICE FACTORY
   //||||||||||||||||||||||||||--
-  function authService($http, $q, authToken, adminDataService, $state, $window) {
+  function authService($http, $q, authToken, userDataService, $state, $window) {
 
     // create auth factory object
     var authFactory = {};
@@ -23,15 +23,15 @@
 
       // return the promise object and its data
       return $http.post('/api/login', {
-        email: email,
-        password:    password
+        email:    email,
+        password: password
       })
-        .then(function(data) {
+        .success(function(data) {
           authToken.setToken(data.token);
 
-          // set adminDataService.user to the logged in user
-          adminDataService.user = data.user;
-          console.log("check it out", adminDataService);
+          // set userDataService.user to the logged in user
+          userDataService.user = data.user;
+          console.log("check it out", userDataService);
           return data;
         });
     };
@@ -42,7 +42,7 @@
       authToken.setToken();
 
       // return to homepage
-      $state.go('product');
+      $state.go('homePage');
     };
 
     // check if a user is logged in
@@ -54,12 +54,12 @@
         return false;
     };
 
-    // get the logged in admin
+    // get the logged in user
     authFactory.setUser = function() {
       var token = authToken.getToken().split('.')[1];
       var user = JSON.parse($window.atob(token));
-      adminDataService.user = user;
-      console.log(adminDataService);
+      userDataService.user = user;
+      console.log(userDataService);
       return user;
     };
 

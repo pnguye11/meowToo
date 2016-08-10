@@ -3,17 +3,18 @@
 
   angular
     .module("meowTooApp")
-    .controller("ProductController", ProductController);
+    .controller("ProductsController", ProductsController);
 
-  ProductController.$inject = ["$state", "adminDataService", "$http"];
+  ProductsController.$inject = ["$state",  "$log", "$http"];
 
-  function ProductController($state, adminDataService, $http) {
+  function ProductsController($state,  $log, $http) {
     var vm = this;
+    vm.products = [];
 
-    vm.admin = adminDataService.admin;
+    // vm.current = .product;
 
 
-    vm.products = {};
+
 
     vm.newProduct = {
       image: "",
@@ -33,40 +34,21 @@
 
     vm.getProducts   = getProducts;
     vm.deleteProduct = deleteProduct;
-    vm.updateProduct  = updateProduct;
+    vm.updateProduct = updateProduct;
     vm.postProduct   = postProduct;
     vm.resetEditForm = resetEditForm;
 
     vm.getProducts();
 
-    // function getProducts() {
-    //   productDataService.all().then(function(response) {
-    //     vm.products = response.data;
-    //     // vm.uniqueMans = getUnique(vm.items, 'manufacturer');
-    //     // vm.uniqueColors = getUnique(vm.items, 'color').filter(function(color) {
-    //     //   return color !== 'undefined';
-    //     // });
-    //     // vm.uniqueType = getUnique(vm.items, 'type');
-    //     // vm.uniquePhoneModels = getUnique(vm.items, "phoneModel");
-    //     // vm.uniquePrices = getUnique(vm.items, "price");
-    //       return products
-    //     // vm.uniqueColor = getUnique(vm.items,"color");
-    //     console.log(response.data);
-    //   }, function(errRes) {
-    //     console.error('Error retrieving item!', errRes);
-    //   });
-    // }
-
-
       function getProducts() {
       $http.get('/api/products').then(function(response) {
-        vm.products = {
-          image: "",
-          title: "",
-          stock: Number,
-          price: Number,
-          description: ""
-        }
+        vm.products = response.data;
+        //   image: "",
+        //   title: "",
+        //   stock: Number,
+        //   price: Number,
+        //   description: ""
+        // }
       }, function(errRes) {
         console.error('Error posting item!', errRes);
       });
@@ -113,7 +95,6 @@
       vm.productPrice       = Number;
       vm.productStock       = Number;
       vm.productDescription = '';
-      vm.product = '';
       vm.productTitle = '';
       vm.editProduct = {
         image: "",

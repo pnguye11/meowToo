@@ -1,23 +1,22 @@
 var express = require('express'),
     router  = express.Router();
 
-///required controllers
-var ProductsCtlr = require('../controllers/productCtlr'),
-    AdminCtlr    = require('../controllers/adminCtlr'),
-    AuthsCtrl    = require('../controllers/auths');
-
-//// users routes
-router.post('/login',                               AuthsCtrl.adminAuth);
-router.post('/admins',                              AdminCtlr.userCreate);
-router.get('/users/:id',                            AdminCtlr.userShow);
+var ProductsController = require('../controllers/products'),
+    UsersController    = require('../controllers/users');
 
 
-////product routes
-router.get('/products/',                              ProductsCtlr.productShow);
-router.get('/products',                               ProductsCtlr.productsIndex);
-router.post('/products',       AuthsCtrl.tokenVerify, ProductsCtlr.productCreate);
-router.put('/products/:id',    AuthsCtrl.tokenVerify, ProductsCtlr.productUpdate);
-router.delete('/products/:id', AuthsCtrl.tokenVerify, ProductsCtlr.productDelete);
+
+router.post('/login',                               UsersController.userAuth);
+router.post('/users',                               UsersController.userCreate);
+router.get('/users/:id',                            UsersController.userShow);
+
+
+
+router.get('/products/:id',    UsersController.tokenVerify, ProductsController.productShow);
+router.get('/products',        UsersController.tokenVerify, ProductsController.productIndex);
+router.post('/products',       UsersController.tokenVerify, ProductsController.productCreate);
+router.put('/products/:id',    UsersController.tokenVerify, ProductsController.productUpdate);
+router.delete('/products/:id', UsersController.tokenVerify, ProductsController.productDelete);
 
 
 module.exports = router;

@@ -6,7 +6,8 @@ var Category = require('../models/category');
 var users = [
   { // 0
     email: "hi@ymail.com",
-    password:   "abc123"
+    password:   "abc123",
+    role: "admin",
   },
 
 ];
@@ -26,7 +27,7 @@ var users = [
 //   });
 // });
 
-var categories = [ "Shoes", "Apparels", "Misc"];
+var categories = [ "Shoes", "Apparels", "Misc" ];
 
 Product.remove({}, function(err) {
   if (err) console.log(err);
@@ -40,28 +41,29 @@ Product.remove({}, function(err) {
       var products = [
         {
             title: 'You Can Do it',
-            imageUrl: 'assets/img/youcan.jpg',
+            image: 'assets/img/cat1.jpg',
             price: 25,
             stock: 250,
             description: 'You Can Do it!',
             category: categories[1],
           }, {
             title: 'Mug',
-            imageUrl: 'assets/img/mug.png',
+            image: 'assets/img/mug.png',
             price: 15,
             stock: 100,
             description: 'Drink Me!',
-            category: categories[3]
+            category: categories[0],
           }, {
             title: 'coffee mug',
-            imageUrl: 'assets/img/cuphoodie.jpg',
+            image: 'assets/img/cuphoodie.jpg',
             price: 8,
             stock: 50,
             description: "You're Purrrrfect!",
-            category: categories[2]
+            category: categories[2],
           }
 
         ];
+
       Product.create(products, function(err, products) {
 
         if (err) {

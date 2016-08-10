@@ -6,8 +6,8 @@ var mongoose     = require('mongoose'),
 
     var categorySchema = new Schema({
       category : {
-              type: String, required: true,
-              enum: ["Shoes", "Apparels", "Misc"]
+                  type: String, required: true,
+                  enum: ["Shoes", "Apparels", "Misc"]
         },
     });
 

@@ -1,9 +1,9 @@
 // Require the model/s you're controlling
 var product  = require("../models/product");
-var category = require("../models/product")
+var category = require("../models/category");
 
 //||||||||||||||||||||||||||--
-//  GET product
+//  GET  single product
 //||||||||||||||||||||||||||--
 var productShow = function(req, res, next){
   var id = req.params.id;
@@ -21,10 +21,10 @@ var productShow = function(req, res, next){
 //||||||||||||||||||||||||||--
 // GET Products
 //||||||||||||||||||||||||||--
-var productsIndex = function(req, res) {
+var productIndex = function(req, res, next) {
   product.find({}, function(err, products) {
     if (err) {
-      res.send(err);
+      res.json(err);
     }
 
     // return the products
@@ -43,7 +43,7 @@ var productCreate = function(req, res) {
   product.stock      = req.body.stock;
   product.image      = req.body.image;
   product.description      = req.body.description;
-  // product.category  = req.body.category;
+  product.category  = req.body.category;
 
   product.save(function(err, savedProduct) {
     if (err) {
@@ -108,8 +108,8 @@ var productDelete = function(req, res) {
 
 // Export the function/s as JSON
 module.exports = {
+  productIndex:   productIndex,
   productShow:    productShow,
-  productsIndex:  productsIndex,
   productCreate:  productCreate,
   productUpdate:  productUpdate,
   productDelete:  productDelete

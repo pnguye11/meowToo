@@ -1,6 +1,6 @@
 // Require the model/s you're controlling
-var product  = require("../models/product");
-var category = require("../models/category");
+var Product  = require("../models/product");
+var Category = require("../models/category");
 
 //||||||||||||||||||||||||||--
 //  GET  single product
@@ -8,7 +8,7 @@ var category = require("../models/category");
 var productShow = function(req, res, next){
   var id = req.params.id;
 
-  product.findById(id, function(err, product){
+  Product.findById(id, function(err, product){
     if (err) {
       res.send(err);
     }
@@ -22,7 +22,7 @@ var productShow = function(req, res, next){
 // GET Products
 //||||||||||||||||||||||||||--
 var productIndex = function(req, res, next) {
-  product.find({}, function(err, products) {
+  Product.find({}, function(err, products) {
     if (err) {
       res.json(err);
     }
@@ -38,7 +38,7 @@ var productIndex = function(req, res, next) {
 var productCreate = function(req, res) {
   var product       = new Product();   // create a new instance of the product model
 
-console.log("hi")
+// console.log("hi")
   product.title      = req.body.title;
   product.price      = req.body.price;
   product.stock      = req.body.stock;
@@ -63,7 +63,7 @@ console.log("hi")
 var productUpdate = function(req, res) {
   var id = req.params.id;
 
-  product.findById(id, function(err, product) {
+  Product.findById(id, function(err, product) {
 
     if (err) {
       res.send(err);
@@ -97,7 +97,7 @@ var productDelete = function(req, res) {
 
   var id = req.params.id;
 
-  product.remove({"_id" : id}, function(err) {
+  Product.remove({"_id" : id}, function(err) {
     if (err) {
       res.send(err);
     }

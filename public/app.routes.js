@@ -37,6 +37,11 @@
         templateUrl: "/templates/products.html",
         controller: "ProductsController",
         controllerAs: "vm"
+      }).state("productsEdit", {
+        url: "/productedit",
+        templateUrl: "/templates/productedit.html",
+        controller: "ProductsController",
+        controllerAs: "vm"
       });
 
 

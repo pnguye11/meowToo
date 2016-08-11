@@ -1,18 +1,18 @@
-var mongoose     = require('mongoose'),
-    Schema       = mongoose.Schema;
+// var mongoose     = require('mongoose'),
+//     Schema       = mongoose.Schema;
 
 
-    /// category schema
+//     /// category schema
 
-    var categorySchema = new Schema({
-      category : {
-                  type: String, required: true,
-                  enum: ["Shoes", "Apparels", "Misc"]
-        },
-    });
+//     var categorySchema = new Schema({
+//       category : {
+//                   type: String, required: true,
+//                   enum: ["Shoes", "Apparels", "Misc"]
+//         },
+//     });
 
-    //model using schema
-var Category = mongoose.model("Category", categorySchema);
+//     //model using schema
+// var Category = mongoose.model("Category", categorySchema);
 
-// export the model
-module.exports = Category;
+// // export the model
+// module.exports = Category;

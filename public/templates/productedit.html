@@ -1,9 +1,9 @@
-<form ng-submit="vm.postProduct()" >
+<form ng-submit="vm.editProduct()" >
 <div class="form-group">
     <label for="title">Title</label>
     <input
         type="text"
-        ng-model="vm.newProduct.title"
+        ng-model="vm.editProduct.title"
         class="form-control"
         id="title"
         placeholder="product title"
@@ -13,7 +13,7 @@
     <label for="year">Description</label>
     <input
         type="text"
-        ng-model="vm.newProduct.description"
+        ng-model="vm.editProduct.description"
         class="form-control"
         id="description"
         placeholder="product description"
@@ -24,7 +24,7 @@
     <input
         type="number"
         min="0"
-        ng-model="vm.newProduct.price"
+        ng-model="vm.editProduct.price"
         class="form-control"
         id="price"
         placeholder="0.00"
@@ -36,7 +36,7 @@
         type="string"
         step="any"
         min="0"
-        ng-model="vm.newProduct.image"
+        ng-model="vm.editProduct.image"
         class="form-control"
         id="image"
         placeholder="link"
@@ -48,7 +48,7 @@
         type="string"
         step="any"
         min="0"
-        ng-model="vm.newProduct.category"
+        ng-model="vm.editProduct.category"
         class="form-control"
         id="image"
         placeholder="text"

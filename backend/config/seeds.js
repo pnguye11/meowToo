@@ -43,21 +43,18 @@ Product.remove({}, function(err) {
             title: 'You Can Do it',
             image: 'assets/img/cat1.jpg',
             price: 25,
-            stock: 250,
             description: 'You Can Do it!',
             category: categories[1],
           }, {
             title: 'Mug',
             image: 'assets/img/mug.png',
             price: 15,
-            stock: 100,
             description: 'Drink Me!',
             category: categories[0],
           }, {
             title: 'coffee mug',
             image: 'assets/img/cuphoodie.jpg',
             price: 8,
-            stock: 50,
             description: "You're Purrrrfect!",
             category: categories[2],
           }

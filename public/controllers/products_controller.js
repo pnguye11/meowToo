@@ -21,7 +21,6 @@
     vm.newProduct = {
       image: "",
       title: "",
-      stock: Number,
       price: Number,
       description: ""
     };
@@ -29,7 +28,6 @@
     vm.editProduct = {
       image: "",
       title: "",
-      stock: Number,
       price: Number,
       description: ""
     }
@@ -65,17 +63,16 @@
     }
 
     function postProduct() {
-      console.log("hi");
+      // console.log("hi");
       $http.post('/api/products', vm.newProduct)
         .then(getProducts)
         .then(function(response) {
           vm.newProduct = {
             image: "",
             title: "",
-            stock: Number,
             price: Number,
             description: "",
-            category: ""
+            // category: ""
           };
         });
     }
@@ -85,7 +82,6 @@
         vm.editProduct = {
           image: "",
           title: "",
-          stock: Number,
           price: Number,
           description: ""
         };
@@ -97,38 +93,36 @@
     function resetEditForm() {
       vm.productImage       = '';
       vm.productPrice       = Number;
-      vm.productStock       = Number;
       vm.productDescription = '';
       vm.productTitle = '';
       vm.editProduct = {
         image: "",
         title: "",
-        stock: Number,
         price: Number,
         description: ""
       };
     }
 
-vm.getCategory = function(cat){
-    var p = allprod;
-    var prodcat = []
+// vm.getCategory = function(cat){
+//     var p = allprod;
+//     var prodcat = []
 
-    for (var i=0; i< p.length; i++){
-      for (var j=0; j< p[i].categories.length; j++){
-        if (p[i].categories[j] == cat){
-          //console.log(cat);
-          prodcat.push(p[i]);
+//     for (var i=0; i< p.length; i++){
+//       for (var j=0; j< p[i].categories.length; j++){
+//         if (p[i].categories[j] == cat){
+//           //console.log(cat);
+//           prodcat.push(p[i]);
 
-        }
-        else if(cat == ''){
-          prodcat = allprod;
-        }
-      }
-    }
+//         }
+//         else if(cat == ''){
+//           prodcat = allprod;
+//         }
+//       }
+//     }
 
 
-      vm.products = prodcat;
-  }
+//       vm.products = prodcat;
+//   }
 
 
   }

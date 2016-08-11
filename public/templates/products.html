@@ -34,7 +34,7 @@
                     </div>
                     <div class="product-info">
                         <div class="product-name">
-                            {{product.name}}
+                           <!--  {{product.name}} -->
                         </div>
                         <div class="product-brand">
                             <!-- SET PRODUCT Description -->
@@ -50,7 +50,26 @@
                               <br>
                               <ul ng-show="vm.isLoggedIn()">
                                   <button class="btn btn-danger btn-xs" ng-click="vm.deleteProduct(product._id)">X</button>
-                                  <button class="btn btn-warning btn-xs" ng-click="">Edit</button>
+                                  <button class="btn btn-warning btn-xs" ng-click="showme=true">Edit</button>
+                                  <form class="form-inline" ng-show="showme" id="edit-form">
+        <br>
+        <div class="form-group">
+          <input type="text" name='productTitle' id="product-title" placeholder="{{product.title}}" class="form-control" ng-model="vm.editProduct.title" />
+        </div>
+        <select class="form-control" name="fishCategory" id="fish-category" ng-model="vm.editFish.category">
+            <option value="Fish">Fish</option>
+            <option value="Clothing">Clothing</option>
+            <option value="Corpse">Corpse</option>
+            <option value="Trash">Trash</option>
+        </select>
+        <button class="btn btn-success btn-xs" ng-click="vm.updateProduct(product._id)">Save</button>
+        <button class="btn btn-default btn-xs" ng-click="showme=false; vm.resetEditForm();">Cancel</button>
+
+      </form>
+
+
+
+
                               </ul>
 
                         </div>

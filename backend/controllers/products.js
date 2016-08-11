@@ -43,7 +43,7 @@ var productCreate = function(req, res) {
   product.price      = req.body.price;
   product.image      = req.body.image;
   product.description      = req.body.description;
-  // product.category  = req.body.category;
+  product.category  = req.body.category;
   product.save(function(err, savedProduct) {
     if (err) {
       res.send(err)
@@ -73,7 +73,7 @@ var productUpdate = function(req, res) {
     if (req.body.price) product.price = req.body.price;
     if (req.body.image) product.image = req.body.image;
     if (req.body.description) product.description = req.body.description;
-    // if (req.body.category) product.category = req.body.category;
+    if (req.body.category) product.category = req.body.category;
 
     // save the product
     product.save(function(err, updatedProduct) {

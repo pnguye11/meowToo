@@ -17,7 +17,6 @@
 
 
 
-
     vm.newProduct = {
       image: "",
       title: "",
@@ -38,17 +37,21 @@
     vm.postProduct   = postProduct;
     vm.resetEditForm = resetEditForm;
 
+    function getUnique(arr, field) {
+      var obj = {};
+      arr.forEach(function(e){
+        obj[e[field]] = true;
+      });
+      return Object.keys(obj).sort();
+    };
+
+
     vm.getProducts();
 
       function getProducts() {
       $http.get('/api/products').then(function(response) {
         vm.products = response.data;
-        //   image: "",
-        //   title: "",
-        //   stock: Number,
-        //   price: Number,
-        //   description: ""
-        // }
+        vm.uniqueCats = getUnique(vm.products, 'category')
       }, function(errRes) {
         console.error('Error posting item!', errRes);
       });
@@ -103,14 +106,14 @@
       };
     }
 
-// vm.getCategory = function(cat){
+// vm.getCategory = function([cat]){
 //     var p = allprod;
-//     var prodcat = []
+//     var prodcat = [];
 
 //     for (var i=0; i< p.length; i++){
 //       for (var j=0; j< p[i].categories.length; j++){
 //         if (p[i].categories[j] == cat){
-//           //console.log(cat);
+//           console.log(cat);
 //           prodcat.push(p[i]);
 
 //         }

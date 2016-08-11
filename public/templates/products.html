@@ -1,10 +1,13 @@
+<div class="form-container">
+              <input type="text" class="form-control" placeholder="Search for a brand or item" ng-model="vm.search"><a class="search-btn"></a>
+            </div>
 <section class="secondary-nav" role="sub-nav">
   <div class="content-wrapper" class="col-xs-12 col-sm-3">
     <ul class="product-nav">
       <li ng-class="{'focus': category==''}" ng-click="getCategory('')"><a>All</a></li>
-      <li ng-class="{'focus': category=='shoes'}" ng-click="getCategory('shoes')"><a>Shoes</a></li>
-      <li ng-class="{'focus': category=='shirts'}" ng-click="getCategory('Apparels')"><a>Apparels</a></li>
-      <li ng-class="{'focus': category=='pants'}" ng-click="getCategory('Misc')"
+      <li ng-class="{'focus': category==[0]}" ng-click="vm.getCategory[0]"><a>Shoes</a></li>
+      <li ng-class="{'focus': category=='Apparels'}" ng-click="vm.getCategory.Apparels"><a>Apparels</a></li>
+      <li ng-class="{'focus': category=='Misc'}" ng-click="vm.getCategory.Misc"
       ><a>Misc</a></li>
       <li ng-class="{'focus': category=='outerwear'}" ng-click="getCategory('outerwear')"
       ><a>Outerwear</a></li>
@@ -18,7 +21,7 @@
         <div class="row">
             <!--: SHOW PRODUCTS -->
             <div class="col-xs-12 col-sm-3"
-                ng-repeat="product in vm.products">
+                ng-repeat="product in vm.products | filter: vm.search">
                 <div id="product-card" class="product-card">
                     <div class="product-buy">
                         <div class="table-view">

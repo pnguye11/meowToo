@@ -1,7 +1,7 @@
 var mongoose = require('./database');
 var User     = require('../models/user');
 var Product  = require('../models/product');
-var Category = require('../models/category');
+// var Category = require('../models/category');
 
 var users = [
   { // 0
@@ -27,7 +27,7 @@ var users = [
 //   });
 // });
 
-var categories = [ "Shoes", "Apparels", "Misc" ];
+// var categories = [ "Shoes", "Apparels", "Misc" ];
 
 Product.remove({}, function(err) {
   if (err) console.log(err);
@@ -44,19 +44,19 @@ Product.remove({}, function(err) {
             image: 'assets/img/cat1.jpg',
             price: 25,
             description: 'You Can Do it!',
-            category: categories[1],
+            category: "Shoes",
           }, {
             title: 'Mug',
             image: 'assets/img/mug.png',
             price: 15,
             description: 'Drink Me!',
-            category: categories[0],
+            category: "Misc",
           }, {
             title: 'coffee mug',
             image: 'assets/img/cuphoodie.jpg',
             price: 8,
             description: "You're Purrrrfect!",
-            category: categories[2],
+            category: "Apparels",
           }
 
         ];

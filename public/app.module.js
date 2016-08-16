@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  angular.module('meowTooApp', ["ui.router"])
+  angular.module('meowTooApp', ['ui.router', 'ngCart'])
 
     .config(function($httpProvider) {
 

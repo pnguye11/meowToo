@@ -19,6 +19,7 @@
     "tests"
   ],
   "dependencies": {
-    "ngCart": "ngcart#^1.0.0"
+    "ngCart": "ngcart#^1.0.0",
+    "jquery": "^3.1.0"
   }
 }

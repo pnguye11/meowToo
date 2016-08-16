@@ -5,9 +5,9 @@
     .module("meowTooApp")
     .config(AppRoutes);
 
-  AppRoutes.$inject = ["$stateProvider", "$urlRouterProvider"];
+  AppRoutes.$inject = ["$stateProvider", "$urlRouterProvider", "$locationProvider", "$httpProvider"];
 
-  function AppRoutes($stateProvider, $urlRouterProvider) {
+  function AppRoutes($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $stateProvider
       .state("homePage", {
         url: '/home',
@@ -39,7 +39,7 @@
         controllerAs: "vm"
       }).state("productsEdit", {
         url: "/productedit",
-        templateUrl: "/templates/productedit.html",
+        templateUrl: "/templates/cart.html",
         controller: "ProductsController",
         controllerAs: "vm"
       });

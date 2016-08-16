@@ -4,10 +4,10 @@
 <section class="secondary-nav" role="sub-nav">
   <div class="content-wrapper" class="col-xs-12 col-sm-3">
     <ul class="product-nav">
-      <li ng-class="{'focus': category==''}" ng-click="getCategory('')"><a>All</a></li>
-      <li ng-class="{'focus': category==[0]}" ng-click="vm.getCategory[0]"><a>Shoes</a></li>
-      <li ng-class="{'focus': category=='Apparels'}" ng-click="vm.getCategory.Apparels"><a>Apparels</a></li>
-      <li ng-class="{'focus': category=='Misc'}" ng-click="vm.getCategory.Misc"
+      <li ng-class="{'focus': category==''}" class="filter" data-filter="all" ng-click="getCategory('')"><a>All</a></li>
+      <li ng-class="{'focus': category=='Shoes'}"  class="filter" ng-click="vm.getProduct.category('Shoes')"><a>Shoes</a></li>
+      <li ng-class="{'focus': category=='Apparels'}"  class="filter" ng-click="vm.getProduct.category('Apparels')"><a>Apparels</a></li>
+      <li ng-class="{'focus': category=='Misc'}"  class="filter" ng-click="vm.getProduct.category('Misc')"
       ><a>Misc</a></li>
       <li ng-class="{'focus': category=='outerwear'}" ng-click="getCategory('outerwear')"
       ><a>Outerwear</a></li>
@@ -21,12 +21,13 @@
         <div class="row">
             <!--: SHOW PRODUCTS -->
             <div class="col-xs-12 col-sm-3"
-                ng-repeat="product in vm.products | filter: vm.search">
+                ng-repeat="product in vm.products | filter: vm.search | filter:{category: vm.category}" class="filter">
                 <div id="product-card" class="product-card">
                     <div class="product-buy">
                         <div class="table-view">
                             <div class="table-cell">
-                                <i class="fa fa-shopping-cart"></i>
+                              <ngcart-cart></ngcart-cart>
+                                <!-- <i class="fa fa-shopping-cart"></i> -->
                             </div>
                         </div>
                     </div>
@@ -51,6 +52,8 @@
                             <!-- SET PRODUCT PRICE WITH FILTER -->
                             {{product.price | currency:'$':0}}
                               <br>
+                              <br>
+                              <ngcart-addtocart id="{{ product.id }}" name="{{ product.name }}" price="{{ product.price }}" quantity="1" quantity-max="30" data="product"></ngcart-addtocart>
                               <ul ng-show="vm.isLoggedIn()">
                                   <button class="btn btn-danger btn-xs" ng-click="vm.deleteProduct(product._id)">X</button>
                                   <button class="btn btn-warning btn-xs" ng-click="showme=true">Edit</button>

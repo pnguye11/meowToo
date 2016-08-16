@@ -13,7 +13,7 @@
     vm.isLoggedIn = authService.isLoggedIn;
     vm.currentUser = userDataService.user;
     vm.products = [];
-
+    vm.categories = [ 'Shoes', 'Misc', 'Apparels' ];
 
 
 

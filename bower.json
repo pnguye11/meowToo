@@ -1,0 +1,24 @@
+{
+  "name": "sicapp",
+  "description": "cart",
+  "main": "cart",
+  "authors": [
+    "Phuong Nathan Nguyen <pnguye11@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "cart"
+  ],
+  "homepage": "https://github.com/pnguye11/sic_app",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ngCart": "ngcart#^1.0.0"
+  }
+}

@@ -27,7 +27,7 @@ var users = [
 //   });
 // });
 
-// var categories = [ "Shoes", "Apparels", "Misc" ];
+var categories = [ "Shoes", "Apparels", "Misc" ];
 
 Product.remove({}, function(err) {
   if (err) console.log(err);

@@ -1,6 +1,6 @@
 // Require the model/s you're controlling
 var Product  = require("../models/product");
-var Category = require("../models/category");
+// var Category = require("../models/category");
 
 //||||||||||||||||||||||||||--
 //  GET  single product

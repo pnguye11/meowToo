@@ -20,13 +20,16 @@ body {
   z-index: 20;
 }
 
-.navbar {
-   background-color: white;
-   background: white;
-   border-color: white;
+.navbar :hover{
+   color: #ff6d37;
+   background-color: transparent;
+   background: transparent;
+   border-color: transparent;
 }
 
-.navbar li { color: #000 }
+.navbar li a:hover {
+ color: #ff6d37;
+}
 /* Flip around the padding for proper display in narrow viewports */
 .navbar-wrapper > .container {
   padding-right: 0;
@@ -193,7 +196,7 @@ Nav
 nav{
   height:55px;
   line-height:55px;
-  color:#ff6d37;
+  color: black;
   border-bottom:1px solid #d8d8d8;
   box-shadow: 0 4px 2px -2px #d8d8d8;
 }
@@ -339,7 +342,7 @@ Product view
 }
 
 #product-card .product-buy:hover .fa{
-  color:whitesmoke;
+  color:#ff6d37;
   cursor: pointer;
   cursor:hand;
 }

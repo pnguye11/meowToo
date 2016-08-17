@@ -23,13 +23,7 @@
             <div class="col-xs-12 col-sm-3"
                 ng-repeat="product in vm.products | filter: vm.search | filter:{category: vm.category}" class="filter">
                 <div id="product-card" class="product-card">
-                    <div class="product-buy">
-                        <div class="table-view">
-                            <div class="table-cell">
-                                <i class="fa fa-shopping-cart"></i>
-                            </div>
-                        </div>
-                    </div>
+
                     <!-- SET PRODUCT IMAGE -->
                     <div>
 
@@ -50,8 +44,8 @@
                         <div class="product-cost">
                             <!-- SET PRODUCT PRICE WITH FILTER -->
                             {{product.price | currency:'$':0}}
-                              <ngcart-addtocart id="{{ product.id }}" name="{{ product.name }}" price="{{ product.price }}" quantity="1" quantity-max="30" data="product">Add to Cart</ngcart-addtocart>
                               <br>
+                            <ngcart-addtocart id="{{product._id}}" name="{{product.title}}" price="{{product.price}}" template-url="bower_components/ngCart/template/ngCart/addtocart.html" data="product">BUY</ngcart-addtocart>
 
                               <br>
                               <ul ng-show="vm.isLoggedIn()">

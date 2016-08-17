@@ -20,6 +20,13 @@ body {
   z-index: 20;
 }
 
+.navbar {
+   background-color: white;
+   background: white;
+   border-color: white;
+}
+
+.navbar li { color: #000 }
 /* Flip around the padding for proper display in narrow viewports */
 .navbar-wrapper > .container {
   padding-right: 0;

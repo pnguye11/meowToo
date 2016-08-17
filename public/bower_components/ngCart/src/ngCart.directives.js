@@ -22,7 +22,7 @@ angular.module('ngCart.directives', ['ngCart.fulfilment'])
             transclude: true,
             templateUrl: function(element, attrs) {
                 if ( typeof attrs.templateUrl == 'undefined' ) {
-                    return 'bower_components/template/ngCart/addtocart.html';
+                    return 'bower_components/ngCart/template/ngCart/addtocart.html';
                 } else {
                     return attrs.templateUrl;
                 }
@@ -56,7 +56,7 @@ angular.module('ngCart.directives', ['ngCart.fulfilment'])
             scope: {},
             templateUrl: function(element, attrs) {
                 if ( typeof attrs.templateUrl == 'undefined' ) {
-                    return 'template/ngCart/cart.html';
+                    return 'bower_components/ngCart/template/ngCart/cart.html';
                 } else {
                     return attrs.templateUrl;
                 }
@@ -75,7 +75,7 @@ angular.module('ngCart.directives', ['ngCart.fulfilment'])
             transclude: true,
             templateUrl: function(element, attrs) {
                 if ( typeof attrs.templateUrl == 'undefined' ) {
-                    return 'template/ngCart/summary.html';
+                    return 'bower_components/ngCart/template/ngCart/summary.html';
                 } else {
                     return attrs.templateUrl;
                 }
@@ -111,7 +111,7 @@ angular.module('ngCart.directives', ['ngCart.fulfilment'])
             transclude: true,
             templateUrl: function(element, attrs) {
                 if ( typeof attrs.templateUrl == 'undefined' ) {
-                    return 'template/ngCart/checkout.html';
+                    return 'bower_components/ngCart/template/ngCart/checkout.html';
                 } else {
                     return attrs.templateUrl;
                 }

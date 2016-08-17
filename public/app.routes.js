@@ -37,11 +37,10 @@
         templateUrl: "/templates/products.html",
         controller: "ProductsController",
         controllerAs: "vm"
-      }).state("productsEdit", {
-        url: "/productedit",
-        templateUrl: "/templates/cart.html",
-        controller: "ProductsController",
-        controllerAs: "vm"
+      }).state("checkout", {
+        url: "/checkout",
+        templateUrl: "bower_components/ngCart/template/ngCart/checkout.html",
+        controller: "CartController"
       });
 
 

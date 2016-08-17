@@ -17,7 +17,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
 </head>
 <body ng-controller="MainController as vm" class="container" ng-cloak ng-init="">
-    <div class="navbar-wrapper">
+    <div class="navbar-wrapper" class="translucent">
       <div  ng-init="" class="container">
         <nav class="navbar navbar-inverse navbar-static-top">
           <div class="container">
@@ -35,10 +35,14 @@
                 <li class="active"><a href="/#/home">Home</a></li>
                 </li>
                 <li><a href="/#/products">Product</a></li>
-                    <li>
-                    <ngcart-summary></ngcart-summary>
+                   <li>
 
-                    </li>
+                     <a ui-sref="checkout">
+                     <ngcart-summary template-url="bower_components/ngCart/template/ngCart/summary.html"></ngcart-summary>
+                     </a>
+                   </li>
+
+
               </ul>
               <ul>
 
@@ -47,13 +51,6 @@
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
                   <ul class="dropdown-menu">
                    <li><a ng-click="vm.logout()">Logout</a></li>
-                   <li>
-                    {{ ngCart.getTotalItems() }} /
-{{ ngCart.totalCost() | currency }}
-                     <a ui-sref="checkout">
-                      <ngcart-summary template-url="bower_components/ngCart/template/ngcart/summary.html">{{item}}</ngcart-summary>
-                     </a>
-                   </li>
 
 
                 </ul>
@@ -64,7 +61,7 @@
     </div>
 
 
-    <main ui-view></main>
+    <main ui-view=""></main>
 
 
 

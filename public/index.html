@@ -35,47 +35,33 @@
                 <li class="active"><a href="/#/home">Home</a></li>
                 </li>
                 <li><a href="/#/products">Product</a></li>
+                    <li>
+                    <ngcart-summary></ngcart-summary>
+
+                    </li>
+              </ul>
+              <ul>
+
+
                 <li class="dropdown" ng-show="vm.isLoggedIn()">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
                   <ul class="dropdown-menu">
                    <li><a ng-click="vm.logout()">Logout</a></li>
-                    <!-- <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li class="dropdown-header">Nav header</li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li> -->
-                  </ul>
-                </li>
-              </ul>
+                   <li>
+                    {{ ngCart.getTotalItems() }} /
+{{ ngCart.totalCost() | currency }}
+                     <a ui-sref="checkout">
+                      <ngcart-summary template-url="bower_components/ngCart/template/ngcart/summary.html">{{item}}</ngcart-summary>
+                     </a>
+                   </li>
+
+
+                </ul>
             </div>
           </div>
         </nav>
       </div>
     </div>
-
-    <div class="shop-products container">
-  <div class="row">
-
-    <div ng-repeat="product in vm.products | filter: {name: search} | filter: {status:'active'}:true" ng-click="Ctrl.gotoProduct(product.productId)" class="col-sm-6 col-md-3 narrow-gutter">
-      <div class="tile" ng-mouseenter="hovering=true" ng-mouseleave="hovering=false" ng-class="{'hovered':hovering}">
-        <img ng-src="{{product.image}}" class="img-responsive center-block" alt="{{product.name}}">
-        <div class="overlay">
-          <p ng-bind="product.name"></p>
-          <p ng-bind="product.price | currency">Price</p>
-          <p>Click to View Details</p>
-        </div>
-      </div>
-      <div class="shop-products-info">
-        <p ng-bind="product.name"></p>
-       <!--  <p ng-bind="product.price | currency">Price</p> -->
-      </div>
-    </div>
-
-  </div>
-  <!-- end row -->
-</div>
-<!-- end shop-products container -->
 
 
     <main ui-view></main>

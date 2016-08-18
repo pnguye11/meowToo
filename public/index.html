@@ -35,25 +35,17 @@
                 <li><a ui-sref="homePage">Home</a></li>
                 </li>
                 <li><a ui-sref="productsPage">Products</a></li>
-                   <li>
-
-                     <a ui-sref="checkout">
-                     <ngcart-summary template-url="bower_components/ngCart/template/ngCart/summary.html"></ngcart-summary>
-                     </a>
-                   </li>
-
-
               </ul>
-              <ul>
-
-
+              <ul class="nav navbar-nav navbar-right">
+                <li><a ui-sref="checkout">
+                      <ngcart-summary template-url="bower_components/ngCart/template/ngCart/summary.html"></ngcart-summary>
+                     </a>
+                </li>
                 <li class="dropdown" ng-show="vm.isLoggedIn()">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                   <li><a ng-click="vm.logout()">Logout</a></li>
-
-
-                </ul>
+              <ul class="dropdown-menu">
+                  <li><a ng-click="vm.logout()">Logout</a></li>
+              </ul>
             </div>
           </div>
         </nav>

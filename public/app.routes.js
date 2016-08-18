@@ -20,9 +20,9 @@
         templateUrl: "/about",
         templateUrl: "/templates/about.html"
       })
-      .state("admin", {
-        url: '/admin',
-        templateUrl: "/templates/admin.html",
+      .state("new", {
+        url: '/new',
+        templateUrl: "/templates/new.html",
         controller: "ProductsController",
         controllerAs: "vm"
       })
@@ -37,7 +37,8 @@
         templateUrl: "/templates/products.html",
         controller: "ProductsController",
         controllerAs: "vm"
-      }).state("checkout", {
+      })
+      .state("checkout", {
         url: "/checkout",
         templateUrl: "bower_components/ngCart/template/ngCart/checkout.html",
         controller: "CartController"

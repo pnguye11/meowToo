@@ -17,7 +17,7 @@
       function login() {
         authService.login(vm.email, vm.password)
           .then(function() {
-            $state.go('admin');
+            $state.go('productsPage');
           });
       };
 

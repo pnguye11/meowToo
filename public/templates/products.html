@@ -55,12 +55,14 @@
         <br>
         <div class="form-group">
           <input type="text" name='productTitle' id="product-title" placeholder="{{product.title}}" class="form-control" ng-model="vm.editProduct.title" />
+          <input type="text" name='productPrice' id="product-price" placeholder="{{product.price}}" class="form-control" ng-model="vm.editProduct.price" />
+          <input type="text" name='productDescription' id="product-Description" placeholder="{{product.description}}" class="form-control" ng-model="vm.editProduct.description" />
+          <input type="text" name='productImage' id="product-image" placeholder="{{product.image}}" class="form-control" ng-model="vm.editProduct.image" />
         </div>
-        <select class="form-control" name="fishCategory" id="fish-category" ng-model="vm.editFish.category">
-            <option value="Fish">Fish</option>
-            <option value="Clothing">Clothing</option>
-            <option value="Corpse">Corpse</option>
-            <option value="Trash">Trash</option>
+        <select class="form-control" name="productCategory" id="product-category" ng-model="vm.editproduct.category">
+            <option value="Shoes">Shoes</option>
+            <option value="Apparels">Apparels</option>
+            <option value="Misc">Misc</option>
         </select>
         <button class="btn btn-success btn-xs" ng-click="vm.updateProduct(product._id)">Save</button>
         <button class="btn btn-default btn-xs" ng-click="showme=false; vm.resetEditForm();">Cancel</button>

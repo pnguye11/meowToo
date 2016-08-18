@@ -44,15 +44,11 @@
   </div>
   <div class="form-group">
     <label for="year">Category</label>
-    <input
-        type="string"
-        step="any"
-        min="0"
-        ng-model="vm.newProduct.category"
-        class="form-control"
-        id="image"
-        placeholder="text"
-        />
+      <select class="form-control" name="productCategory" id="product-category" ng-model="vm.editproduct.category">
+            <option value="Shoes">Shoes</option>
+            <option value="Apparels">Apparels</option>
+            <option value="Misc">Misc</option>
+      </select>
   </div>
   <div class="form-group">
     <input type="submit" class="btn btn-primary" value="Save" />

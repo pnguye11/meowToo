@@ -75,7 +75,7 @@
             title: "",
             price: Number,
             description: "",
-            // category: ""
+            category: ""
           };
         });
     }

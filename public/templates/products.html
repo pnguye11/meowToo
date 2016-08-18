@@ -23,8 +23,7 @@
             <div class="col-xs-12 col-sm-3"
                 ng-repeat="product in vm.products | filter: vm.search | filter:{category: vm.category}" class="filter">
                 <div id="product-card" class="product-card">
-
-                    <!-- SET PRODUCT IMAGE -->
+                   <!-- SET PRODUCT IMAGE -->
                     <div>
 
                     <div class="product-img" style="background:url('{{product.image}}');background-size:cover;background-position:center center">
@@ -35,45 +34,46 @@
                         </div>
                         <div class="product-brand">
                             <!-- SET PRODUCT Description -->
-                            <em>{{product.title}}</em>
+                          <em>{{product.title}}</em>
                         </div>
                         <div class="product-brand">
                             <!-- SET PRODUCT Description -->
-                            <em>{{product.description}}</em>
+                          <em>{{product.description}}</em>
                         </div>
                         <div class="product-cost">
                             <!-- SET PRODUCT PRICE WITH FILTER -->
-                            {{product.price | currency:'$':0}}
-                              <br>
-                            <ngcart-addtocart id="{{product._id}}" name="{{product.title}}" price="{{product.price}}" template-url="bower_components/ngCart/template/ngCart/addtocart.html" data="product">BUY</ngcart-addtocart>
+                          {{product.price | currency:'$':0}}
+                          <br>
+                          <ngcart-addtocart id="{{product._id}}" name="{{product.title}}" price="{{product.price}}" template-url="bower_components/ngCart/template/ngCart/addtocart.html" data="product">BUY</ngcart-addtocart>
 
-                              <br>
-                              <ul ng-show="vm.isLoggedIn()">
-                                  <button class="btn btn-danger btn-xs" ng-click="vm.deleteProduct(product._id)">X</button>
-                                  <button class="btn btn-warning btn-xs" ng-click="showme=true">Edit</button>
-                                  <form class="form-inline" ng-show="showme" id="edit-form">
-        <br>
-        <div class="form-group">
-          <input type="text" name='productTitle' id="product-title" placeholder="{{product.title}}" class="form-control" ng-model="vm.editProduct.title" />
-          <input type="text" name='productPrice' id="product-price" placeholder="{{product.price}}" class="form-control" ng-model="vm.editProduct.price" />
-          <input type="text" name='productDescription' id="product-Description" placeholder="{{product.description}}" class="form-control" ng-model="vm.editProduct.description" />
-          <input type="text" name='productImage' id="product-image" placeholder="{{product.image}}" class="form-control" ng-model="vm.editProduct.image" />
-        </div>
-        <select class="form-control" name="productCategory" id="product-category" ng-model="vm.editproduct.category">
-            <option value="Shoes">Shoes</option>
-            <option value="Apparels">Apparels</option>
-            <option value="Misc">Misc</option>
-        </select>
-        <button class="btn btn-success btn-xs" ng-click="vm.updateProduct(product._id)">Save</button>
-        <button class="btn btn-default btn-xs" ng-click="showme=false; vm.resetEditForm();">Cancel</button>
+                          <br>
+                          <ul ng-show="vm.isLoggedIn()">
+                            <button class="btn btn-danger btn-xs" ng-click="vm.deleteProduct(product._id)">X</button>
+                            <button class="btn btn-warning btn-xs" ng-click="showme=true">Edit</button>
+                              <form class="form-inline" ng-show="showme" id="edit-form">
 
-      </form>
+                            <br>
+                            <div class="form-group">
+                              <input type="text" name='productTitle' id="product-title" placeholder="{{product.title}}" class="form-control" ng-model="vm.editProduct.title" />
+                              <input type="text" name='productPrice' id="product-price" placeholder="{{product.price}}" class="form-control" ng-model="vm.editProduct.price" />
+                              <input type="text" name='productDescription' id="product-Description" placeholder="{{product.description}}" class="form-control" ng-model="vm.editProduct.description" />
+                              <input type="text" name='productImage' id="product-image" placeholder="{{product.image}}" class="form-control" ng-model="vm.editProduct.image" />
+                            </div>
+                            <select class="form-control" name="productCategory" id="product-category" ng-model="vm.editproduct.category">
+                                <option value="Shoes">Shoes</option>
+                                <option value="Apparels">Apparels</option>
+                                <option value="Misc">Misc</option>
+                            </select>
+                            <button class="btn btn-success btn-xs" ng-click="vm.updateProduct(product._id)">Save</button>
+                            <button class="btn btn-default btn-xs" ng-click="showme=false; vm.resetEditForm();">Cancel</button>
+
+                            </form>
 
 
-                              </ul>
+                          </ul>
 
                         </div>
-                    </div>
+                      </div>
 
                     </div>
                 </div>

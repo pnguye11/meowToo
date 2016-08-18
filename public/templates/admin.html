@@ -1,15 +1,15 @@
 <form ng-submit="vm.postProduct()" >
-<div class="form-group">
+  <div class="form-group">
     <label for="title">Title</label>
-    <input
+      <input
         type="text"
         ng-model="vm.newProduct.title"
         class="form-control"
         id="title"
         placeholder="product title"
-    />
-</div>
-<div class="form-group">
+        />
+  </div>
+  <div class="form-group">
     <label for="year">Description</label>
     <input
         type="text"
@@ -17,9 +17,9 @@
         class="form-control"
         id="description"
         placeholder="product description"
-    />
-</div>
-<div class="form-group">
+        />
+  </div>
+  <div class="form-group">
     <label for="year">Price</label>
     <input
         type="number"
@@ -28,9 +28,9 @@
         class="form-control"
         id="price"
         placeholder="0.00"
-    />
-</div>
-<div class="form-group">
+        />
+  </div>
+  <div class="form-group">
     <label for="year">Image</label>
     <input
         type="string"
@@ -40,9 +40,9 @@
         class="form-control"
         id="image"
         placeholder="link"
-    />
-</div>
-<div class="form-group">
+        />
+  </div>
+  <div class="form-group">
     <label for="year">Category</label>
     <input
         type="string"
@@ -52,13 +52,9 @@
         class="form-control"
         id="image"
         placeholder="text"
-    />
-</div>
-<div class="form-group">
+        />
+  </div>
+  <div class="form-group">
     <input type="submit" class="btn btn-primary" value="Save" />
-</div>
-<!-- <div class="alert alert-danger" ng-show="errors" role="alert">
-    <strong>Errors(s):</strong>
-    <p>{{vm.errors.data.message}}</p>
-</div> -->
+  </div>
 </form>

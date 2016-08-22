@@ -17,41 +17,38 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
 </head>
 <body ng-controller="MainController as vm" class="container" ng-cloak ng-init="">
-    <div class="navbar-wrapper" class="translucent">
-      <div  ng-init="" class="container">
-        <nav class="navbar navbar-inverse navbar-static-top">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#">MeowToo</a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
-                <li><a ui-sref="homePage">Home</a></li>
-                </li>
-                <li><a ui-sref="productsPage">Products</a></li>
-              </ul>
-              <ul class="nav navbar-nav navbar-right">
-                <li><a ui-sref="checkout">
-                    <ngcart-summary template-url="bower_components/ngCart/template/ngCart/summary.html"></ngcart-summary>
-                    </a>
-                </li>
-                <li class="dropdown" ng-show="vm.isLoggedIn()">
-                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret"></span>Admin</a></li>
-                <li><a ng-click="vm.logout()">Logout</a></li>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">MeowToo</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a ui-sref="homePage">Home</a></li>
+            <li><a ui-sref="productsPage">Products</a></li>
+            <li class="dropdown" ng-show="vm.isLoggedIn()">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Admin <span class="caret"></span></a>
               <ul class="dropdown-menu">
+                <li><a ui-sref="new">Add New Product</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a ng-click="vm.logout()">Logout</a></li>
               </ul>
-                <li><a ui-sref="new">Add New</a></li>
-            </div>
-          </div>
-        </nav>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a ui-sref="checkout">Checkout <ngcart-summary template-url="bower_components/ngCart/template/ngCart/summary.html"></ngcart-summary></a>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
       </div>
-    </div>
+    </nav>
+
 
 
     <main ui-view=""></main>

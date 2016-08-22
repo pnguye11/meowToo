@@ -20,7 +20,6 @@
     "morgan": "~1.6.1",
     "ng-admin": "^1.0.0-alpha2",
     "passport": "^0.3.2",
-    "serve-favicon": "~2.3.0",
     "session": "^0.1.0"
   }
 }

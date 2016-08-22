@@ -1,8 +1,8 @@
 var _ = require('lodash');
 
 var localEnvVars = {
-  TITLE:      'sic',
-  SAFE_TITLE: 'sic',
+  TITLE:      'meowToo',
+  SAFE_TITLE: 'meowToo',
   superSecret: 'templateforever'
 };
 

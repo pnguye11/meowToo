@@ -1,5 +1,5 @@
 {
-  "name": "sicapp",
+  "name": "meowToo",
   "description": "cart",
   "main": "cart",
   "authors": [
@@ -9,7 +9,7 @@
   "keywords": [
     "cart"
   ],
-  "homepage": "https://github.com/pnguye11/sic_app",
+  "homepage": "https://github.com/pnguye11/meowToo",
   "private": true,
   "ignore": [
     "**/.*",

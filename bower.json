@@ -1,5 +1,5 @@
 {
-  "name": "meowToo",
+  "name": "bower install PACKAGE --save",
   "description": "cart",
   "main": "cart",
   "authors": [
@@ -10,7 +10,6 @@
     "cart"
   ],
   "homepage": "https://github.com/pnguye11/meowToo",
-  "private": true,
   "ignore": [
     "**/.*",
     "node_modules",

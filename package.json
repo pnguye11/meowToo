@@ -22,5 +22,8 @@
     "ng-admin": "^1.0.0-alpha2",
     "passport": "^0.3.2",
     "session": "^0.1.0"
+  },
+  "devDependencies": {
+    "bower": "^1.7.9"
   }
 }

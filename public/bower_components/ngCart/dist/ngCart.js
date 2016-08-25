@@ -147,16 +147,16 @@ angular.module('ngCart', ['ngCart.directives'])
         };
 
         this.empty = function () {
-
+            
             $rootScope.$broadcast('ngCart:change', {});
             this.$cart.items = [];
             localStorage.removeItem('cart');
         };
-
+        
         this.isEmpty = function () {
-
+            
             return (this.$cart.items.length > 0 ? false : true);
-
+            
         };
 
         this.toObject = function() {
@@ -356,7 +356,7 @@ angular.module('ngCart.directives', ['ngCart.fulfilment'])
             transclude: true,
             templateUrl: function(element, attrs) {
                 if ( typeof attrs.templateUrl == 'undefined' ) {
-                    return 'bower_components/ngCart/template/ngCart/addtocart.html';
+                    return 'template/ngCart/addtocart.html';
                 } else {
                     return attrs.templateUrl;
                 }
@@ -390,7 +390,7 @@ angular.module('ngCart.directives', ['ngCart.fulfilment'])
             scope: {},
             templateUrl: function(element, attrs) {
                 if ( typeof attrs.templateUrl == 'undefined' ) {
-                    return 'bower_components/ngCart/template/ngCart/cart.html';
+                    return 'template/ngCart/cart.html';
                 } else {
                     return attrs.templateUrl;
                 }
@@ -409,7 +409,7 @@ angular.module('ngCart.directives', ['ngCart.fulfilment'])
             transclude: true,
             templateUrl: function(element, attrs) {
                 if ( typeof attrs.templateUrl == 'undefined' ) {
-                    return 'bower_components/ngCart/template/ngCart/summary.html';
+                    return 'template/ngCart/summary.html';
                 } else {
                     return attrs.templateUrl;
                 }
@@ -445,7 +445,7 @@ angular.module('ngCart.directives', ['ngCart.fulfilment'])
             transclude: true,
             templateUrl: function(element, attrs) {
                 if ( typeof attrs.templateUrl == 'undefined' ) {
-                    return 'bower_components/ngCart/template/ngCart/checkout.html';
+                    return 'template/ngCart/checkout.html';
                 } else {
                     return attrs.templateUrl;
                 }

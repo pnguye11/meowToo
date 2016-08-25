@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node ./backend/bin/www",
-    "seed": "node ./backend/config/seeds.js"
+    "seed": "node ./backend/config/seeds.js",
+    "postinstall": "./node_modules/bower/bin/bower install"
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",

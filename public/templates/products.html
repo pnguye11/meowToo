@@ -47,6 +47,7 @@
                           <ngcart-addtocart id="{{product._id}}" name="{{product.title}}" price="{{product.price}}" template-url="bower_components/ngCart/template/ngCart/addtocart.html" data="product">BUY</ngcart-addtocart>
 
                           <br>
+
                           <ul ng-show="vm.isLoggedIn()">
                             <li class="product">
                               <a href="" class="product-links" ng-click="vm.deleteProduct(product._id)">
@@ -56,24 +57,24 @@
                                 <i class="fa fa-pencil-square-o fa-fw"></i>
                               </a>
                             </li>
-                              <form class="form-inline" ng-show="showme" id="edit-form">
+                            <div ng-show="editShow">
 
-                            <br>
-                            <div class="form-group">
+                              <form  id="edit-form">
+
                               <input type="text" name='productTitle' id="product-title" placeholder="{{product.title}}" class="form-control" ng-model="vm.editProduct.title" />
                               <input type="text" name='productPrice' id="product-price" placeholder="{{product.price}}" class="form-control" ng-model="vm.editProduct.price" />
                               <input type="text" name='productDescription' id="product-Description" placeholder="{{product.description}}" class="form-control" ng-model="vm.editProduct.description" />
                               <input type="text" name='productImage' id="product-image" placeholder="{{product.image}}" class="form-control" ng-model="vm.editProduct.image" />
-                            </div>
-                            <select class="form-control" name="productCategory" id="product-category" ng-model="vm.editproduct.category">
+                              <select class="form-control" name="productCategory" id="product-category" ng-model="vm.editproduct.category">
                                 <option value="Shoes">Shoes</option>
                                 <option value="Apparels">Apparels</option>
                                 <option value="Misc">Misc</option>
-                            </select>
-                            <button class="btn btn-success btn-xs" ng-click="vm.updateProduct(product._id)">Save</button>
-                            <button class="btn btn-default btn-xs" ng-click="showme=false; vm.resetEditForm();">Cancel</button>
+                              </select>
+                              <button class="btn btn-success btn-xs" ng-click="vm.updateProduct(product._id)">Save</button>
+                              <button class="btn btn-danger btn-xs" ng-click="showme=false; vm.resetEditForm();">Cancel</button>
 
                             </form>
+                            </div>
 
 
                           </ul>

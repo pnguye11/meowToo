@@ -48,8 +48,14 @@
 
                           <br>
                           <ul ng-show="vm.isLoggedIn()">
-                            <button class="btn btn-danger btn-xs" ng-click="vm.deleteProduct(product._id)">X</button>
-                            <button class="btn btn-warning btn-xs" ng-click="showme=true">Edit</button>
+                            <li class="product">
+                              <a href="" class="product-links" ng-click="vm.deleteProduct(product._id)">
+                                <i class="fa fa-trash-o fa-fw"></i>
+                              </a>
+                              <a href="" class="product-links" ng-click="editShow=true">
+                                <i class="fa fa-pencil-square-o fa-fw"></i>
+                              </a>
+                            </li>
                               <form class="form-inline" ng-show="showme" id="edit-form">
 
                             <br>

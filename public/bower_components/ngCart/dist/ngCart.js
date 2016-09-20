@@ -31,9 +31,9 @@ angular.module('ngCart', ['ngCart.directives'])
 
         this.init = function(){
             this.$cart = {
-                shipping : null,
-                taxRate : null,
-                tax : null,
+                shipping : 12,
+                taxRate : 9.75,
+                tax : 9.75,
                 items : []
             };
         };
@@ -147,16 +147,16 @@ angular.module('ngCart', ['ngCart.directives'])
         };
 
         this.empty = function () {
-            
+
             $rootScope.$broadcast('ngCart:change', {});
             this.$cart.items = [];
             localStorage.removeItem('cart');
         };
-        
+
         this.isEmpty = function () {
-            
+
             return (this.$cart.items.length > 0 ? false : true);
-            
+
         };
 
         this.toObject = function() {

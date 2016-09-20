@@ -54,6 +54,19 @@
     </table>
 </div>
 
+<div class="modal-footer">
+  <ngcart-checkout service="paypal" settings = "{
+    paypal: {
+      business: 'turtl3_unit_24@yahoo.com',
+      item_number: 1,
+      currency_code: 'USD',
+      no_note: 'Thank-you for shopping!'
+      }
+    }
+    " >
+  </ngcart-checkout>
+</div>
+
 <!-- paypal checkout -->
 <script type="text/ng-template" id="template/ngCart/checkout.html">
 

@@ -1,90 +1,79 @@
 <div class="form-container">
-              <input type="text" class="form-control" placeholder="Search for a brand or product" ng-model="vm.search"><a class="search-btn"></a>
-            </div>
+   <input type="text" class="form-control" placeholder="Search for a brand or product" ng-model="vm.search"><a class="search-btn"></a>
+</div>
 <section class="secondary-nav" role="sub-nav">
-  <div class="content-wrapper" class="col-xs-12 col-sm-3">
-    <ul class="product-nav">
-      <li ng-class="{'focus': category==''}" class="filter" data-filter="all" ng-click="getCategory('')"><a>All</a></li>
-      <li ng-class="{'focus': category=='Shoes'}"  class="filter" ng-click="vm.getProduct.category('Shoes')"><a>Shoes</a></li>
-      <li ng-class="{'focus': category=='Apparels'}"  class="filter" ng-click="vm.getProduct.category('Apparels')"><a>Apparels</a></li>
-      <li ng-class="{'focus': category=='Misc'}"  class="filter" ng-click="vm.getProduct.category('Misc')"
-      ><a>Misc</a></li>
-      <li ng-class="{'focus': category=='outerwear'}" ng-click="getCategory('outerwear')"
-      ><a>Outerwear</a></li>
-      <li ng-class="{'focus': category=='accessories'}" ng-click="getCategory('accessories')"
-      ><a>Accessories</a></li>
-    </ul>
-  </div>
+   <div class="content-wrapper" class="col-xs-12 col-sm-3">
+      <ul class="product-nav">
+         <li ng-class="{'focus': category==''}" class="filter" data-filter="all" ng-click="getCategory('')"><a>All</a></li>
+         <li ng-class="{'focus': category=='Shoes'}"  class="filter" ng-click="vm.getProduct.category('Shoes')"><a>Shoes</a></li>
+         <li ng-class="{'focus': category=='Apparels'}"  class="filter" ng-click="vm.getProduct.category('Apparels')"><a>Apparels</a></li>
+         <li ng-class="{'focus': category=='Misc'}"  class="filter" ng-click="vm.getProduct.category('Misc')"
+            ><a>Misc</a></li>
+         <li ng-class="{'focus': category=='outerwear'}" ng-click="getCategory('outerwear')"
+            ><a>Outerwear</a></li>
+         <li ng-class="{'focus': category=='accessories'}" ng-click="getCategory('accessories')"
+            ><a>Accessories</a></li>
+      </ul>
+   </div>
 </section>
 <section class="product-view" role="product-view" >
-    <div class="content-wrapper" >
-        <div class="row">
-            <!--: SHOW PRODUCTS -->
-            <div class="col-xs-12 col-sm-3"
-                ng-repeat="product in vm.products | filter: vm.search | filter:{category: vm.category}" class="filter">
-                <div id="product-card" class="product-card">
-                   <!-- SET PRODUCT IMAGE -->
-                    <div>
-
-                    <div class="product-img" style="background:url('{{product.image}}');background-size:cover;background-position:center center">
-                    </div>
-                    <div class="product-info">
-                        <div class="product-name">
-                           <!--  {{product.name}} -->
-                        </div>
-                        <div class="product-brand">
-                            <!-- SET PRODUCT Description -->
-                          <em>{{product.title}}</em>
-                        </div>
-                        <div class="product-brand">
-                            <!-- SET PRODUCT Description -->
-                          <em>{{product.description}}</em>
-                        </div>
-                        <div class="product-cost">
-                            <!-- SET PRODUCT PRICE WITH FILTER -->
-                          {{product.price | currency:'$':0}}
-                          <br>
-                          <ngcart-addtocart id="{{product._id}}" name="{{product.title}}" price="{{product.price}}" template-url="bower_components/ngCart/template/ngCart/addtocart.html" data="product">BUY</ngcart-addtocart>
-
-                          <br>
-
-                          <ul ng-show="vm.isLoggedIn()">
-                            <li class="product">
-                              <a href="" class="product-links" ng-click="vm.deleteProduct(product._id)">
-                                <i class="fa fa-trash-o fa-fw"></i>
-                              </a>
-                              <a href="" class="product-links" ng-click="editShow=true">
-                                <i class="fa fa-pencil-square-o fa-fw"></i>
-                              </a>
-                            </li>
-                            <div ng-show="editShow">
-
-                              <form  id="edit-form">
-
+<div class="content-wrapper" >
+   <div class="row">
+      <!--: SHOW PRODUCTS -->
+      <div class="col-xs-12 col-sm-3"
+         ng-repeat="product in vm.products | filter: vm.search | filter:{category: vm.category}" class="filter">
+         <div id="product-card" class="product-card">
+            <!-- SET PRODUCT IMAGE -->
+            <div>
+               <div class="product-img" style="background:url('{{product.image}}');background-size:cover;background-position:center center">
+               </div>
+               <div class="product-info">
+                  <div class="product-name">
+                     <!--  {{product.name}} -->
+                  </div>
+                  <div class="product-brand">
+                     <!-- SET PRODUCT Description -->
+                     <em>{{product.title}}</em>
+                  </div>
+                  <div class="product-brand">
+                     <!-- SET PRODUCT Description -->
+                     <em>{{product.description}}</em>
+                  </div>
+                  <div class="product-cost">
+                     <!-- SET PRODUCT PRICE WITH FILTER -->
+                     {{product.price | currency:'$':0}}
+                     <br>
+                     <ngcart-addtocart id="{{product._id}}" name="{{product.title}}" price="{{product.price}}" template-url="bower_components/ngCart/template/ngCart/addtocart.html" data="product">BUY</ngcart-addtocart>
+                     <br>
+                     <ul ng-show="vm.isLoggedIn()">
+                        <li class="product">
+                           <a href="" class="product-links" ng-click="vm.deleteProduct(product._id)">
+                           <i class="fa fa-trash-o fa-fw"></i>
+                           </a>
+                           <a href="" class="product-links" ng-click="editShow=true">
+                           <i class="fa fa-pencil-square-o fa-fw"></i>
+                           </a>
+                        </li>
+                        <div ng-show="editShow">
+                           <form  id="edit-form">
                               <input type="text" name='productTitle' id="product-title" placeholder="{{product.title}}" class="form-control" ng-model="vm.editProduct.title" />
                               <input type="text" name='productPrice' id="product-price" placeholder="{{product.price}}" class="form-control" ng-model="vm.editProduct.price" />
                               <input type="text" name='productDescription' id="product-Description" placeholder="{{product.description}}" class="form-control" ng-model="vm.editProduct.description" />
                               <input type="text" name='productImage' id="product-image" placeholder="{{product.image}}" class="form-control" ng-model="vm.editProduct.image" />
                               <select class="form-control" name="productCategory" id="product-category" ng-model="vm.editproduct.category">
-                                <option value="Shoes">Shoes</option>
-                                <option value="Apparels">Apparels</option>
-                                <option value="Misc">Misc</option>
+                                 <option value="Shoes">Shoes</option>
+                                 <option value="Apparels">Apparels</option>
+                                 <option value="Misc">Misc</option>
                               </select>
                               <button class="btn btn-success btn-xs" ng-click="vm.updateProduct(product._id)">Save</button>
                               <button class="btn btn-danger btn-xs" ng-click="showme=false; vm.resetEditForm();">Cancel</button>
-
-                            </form>
-                            </div>
-
-
-                          </ul>
-
+                           </form>
                         </div>
-                      </div>
-
-                    </div>
-                </div>
+                     </ul>
+                  </div>
+               </div>
             </div>
-        </div>
-    </div>
-<section>
+         </div>
+      </div>
+   </div>
+</div>

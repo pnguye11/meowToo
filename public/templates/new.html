@@ -1,56 +1,56 @@
 <form ng-submit="vm.postProduct()" >
-  <div class="form-group">
-    <label for="title">Title</label>
+   <div class="form-group">
+      <label for="title">Title</label>
       <input
-        type="text"
-        ng-model="vm.newProduct.title"
-        class="form-control"
-        id="title"
-        placeholder="product title"
-        />
-  </div>
-  <div class="form-group">
-    <label for="year">Description</label>
-    <input
-        type="text"
-        ng-model="vm.newProduct.description"
-        class="form-control"
-        id="description"
-        placeholder="product description"
-        />
-  </div>
-  <div class="form-group">
-    <label for="year">Price</label>
-    <input
-        type="number"
-        min="0"
-        ng-model="vm.newProduct.price"
-        class="form-control"
-        id="price"
-        placeholder="0.00"
-        />
-  </div>
-  <div class="form-group">
-    <label for="year">Image</label>
-    <input
-        type="string"
-        step="any"
-        min="0"
-        ng-model="vm.newProduct.image"
-        class="form-control"
-        id="image"
-        placeholder="link"
-        />
-  </div>
-  <div class="form-group">
-    <label for="year">Category</label>
+         type="text"
+         ng-model="vm.newProduct.title"
+         class="form-control"
+         id="title"
+         placeholder="product title"
+         />
+   </div>
+   <div class="form-group">
+      <label for="year">Description</label>
+      <input
+         type="text"
+         ng-model="vm.newProduct.description"
+         class="form-control"
+         id="description"
+         placeholder="product description"
+         />
+   </div>
+   <div class="form-group">
+      <label for="year">Price</label>
+      <input
+         type="number"
+         min="0"
+         ng-model="vm.newProduct.price"
+         class="form-control"
+         id="price"
+         placeholder="0.00"
+         />
+   </div>
+   <div class="form-group">
+      <label for="year">Image</label>
+      <input
+         type="string"
+         step="any"
+         min="0"
+         ng-model="vm.newProduct.image"
+         class="form-control"
+         id="image"
+         placeholder="link"
+         />
+   </div>
+   <div class="form-group">
+      <label for="year">Category</label>
       <select class="form-control" name="productCategory" id="product-category" ng-model="vm.editproduct.category">
-            <option value="Shoes">Shoes</option>
-            <option value="Apparels">Apparels</option>
-            <option value="Misc">Misc</option>
+         <option value="Shoes">Shoes</option>
+         <option value="Apparels">Apparels</option>
+         <option value="Misc">Misc</option>
       </select>
-  </div>
-  <div class="form-group">
-    <input type="submit" class="btn btn-primary" value="Save" />
-  </div>
+   </div>
+   <div class="form-group">
+      <input type="submit" class="btn btn-primary" value="Save" />
+   </div>
 </form>
